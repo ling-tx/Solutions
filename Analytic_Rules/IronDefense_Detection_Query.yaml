@@ -14,14 +14,5 @@ triggerOperator: gt
 triggerThreshold: 0
 tactics:
 relevantTechniques:
-query: |
-  CommonSecurityLog
-  | where DeviceProduct == "IronDefense"
-  | summarize arg_max(TimeGenerated, *) by DeviceCustomString4, DeviceCustomString2
-  | extend Category = coalesce(column_ifexists("DeviceEventCategory",""),extract(@'cat=([^;]+)(\;|$)', 1, AdditionalExtensions))	
-  | extend Subcategory = extract(@'subcat=([^;]+)(\;|$)', 1, AdditionalExtensions)
-  | extend AlertDescription = strcat(Category, ': ', Subcategory)
-  | extend Status = tostring(DeviceCustomString2)
-  | extend IronVueUrl = replace(@'\\', @'', tostring(DeviceCustomString3))
 version: 1.0.1
 kind: Scheduled
