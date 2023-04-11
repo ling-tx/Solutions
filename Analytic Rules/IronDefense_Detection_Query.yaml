@@ -44,20 +44,5 @@ entityMappings:
     fieldMappings:
       - identifier: Url
         columnName: RequestURL
-customDetails:
-  IronDefenseStatus: Status
-  AnalystRating: LogSeverity
-  AlertCreatedTime: TimeGenerated
-  IronVueUrl: IronVueUrl
-  IronDefenseAlertId: DeviceCustomString4
-  AnalystSeverity: DeviceCustomString1
-eventGroupingSettings:
-  aggregationKind: AlertPerResult
-alertDetailsOverride:
-  alertDisplayNameFormat: | 
-    {{Category}}: {{Subcategory}} ({{DeviceCustomString4}})
-  alertDescriptionFormat: | 
-    IronDefense detected suspicious activity on {{TimeGenerated}} and categorized it as "{{AlertDescription}}".  View full details in IronVue: {{IronVueUrl}}
-  alertSeverityColumnName: LogSeverity
 version: 1.0.1
 kind: Scheduled
