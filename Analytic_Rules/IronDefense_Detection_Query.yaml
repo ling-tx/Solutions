@@ -23,26 +23,5 @@ query: |
   | extend AlertDescription = strcat(Category, ': ', Subcategory)
   | extend Status = tostring(DeviceCustomString2)
   | extend IronVueUrl = replace(@'\\', @'', tostring(DeviceCustomString3))
-entityMappings:
-  - entityType: IP
-    fieldMappings:
-      - identifier: Address
-        columnName: DestinationIP
-  - entityType: IP
-    fieldMappings:
-      - identifier: Address
-        columnName: SourceIP
-  - entityType: Host
-    fieldMappings:
-      - identifier: FullName
-        columnName: DestinationHostName
-  - entityType: Host
-    fieldMappings:
-      - identifier: FullName
-        columnName: SourceHostName
-  - entityType: URL
-    fieldMappings:
-      - identifier: Url
-        columnName: RequestURL
 version: 1.0.1
 kind: Scheduled
