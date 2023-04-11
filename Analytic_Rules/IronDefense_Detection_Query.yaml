@@ -4,15 +4,5 @@ description: |
   'Creates incidents based on behavioral detections from IronDefense.'
 severity: Medium
 status: Available
-requiredDataConnectors:
-  - connectorId: IronNetIronDefense
-    dataTypes:
-      - CommonSecurityLog
-queryFrequency: 5m
-queryPeriod: 5m
-triggerOperator: gt
-triggerThreshold: 0
-tactics:
-relevantTechniques:
 version: 1.0.1
 kind: Scheduled
